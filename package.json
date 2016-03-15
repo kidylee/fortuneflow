@@ -42,4 +42,5 @@
     "testPathDirs": ["tests"],
     "modulePathIgnorePatterns":["dist","src/package.json"]
   }
+
 }
