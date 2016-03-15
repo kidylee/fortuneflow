@@ -1,0 +1,23 @@
+{
+ "name": "nwjs-webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "An Li kidylee@gmail.com",
+  "main": "app://./index.html",
+  "window": {
+    "icon": "icon.png",
+    "show": true,
+    "toolbar": true,
+    "width": 1000,
+    "height": 600,
+    "min_width": 800,
+    "min_height": 400,
+    "position": "center"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+
+  }
+}
