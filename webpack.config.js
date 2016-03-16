@@ -1,6 +1,11 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var fs = require('fs');
+var _ = require('lodash')
+
+
+
+
 
 
 //do not pack the module which has binary file
@@ -14,8 +19,14 @@ fs.readdirSync('node_modules')
   });
 
 
+
+_.without(nodeModules,'react','react-dom');
+
+console.log(nodeModules);
+
+
 module.exports = {
-    entry: "./src/app.js",
+    entry: "./src/app.jsx",
     target: "node-webkit",
     output: {
         path: "dist",
@@ -26,7 +37,14 @@ module.exports = {
 
     module: {
         loaders: [
-            // { test: /\.css$/, loader: "style!css" }
+            {
+              test: /\.jsx$/,
+              loader: 'babel-loader',
+              include: [
+                path.resolve(__dirname, "src"),
+                path.resolve(__dirname, "test")
+              ],
+            }
         ],
         include:  [
             // path.resolve(__dirname, "src")
@@ -34,7 +52,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin()
-    
+
   ],
 
   externals: nodeModules
