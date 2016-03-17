@@ -1,12 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var fs = require('fs');
-var _ = require('lodash')
-
-
-
-
-
 
 //do not pack the module which has binary file
 var nodeModules = {};
@@ -19,11 +13,9 @@ fs.readdirSync('node_modules')
   });
 
 
-
-_.without(nodeModules,'react','react-dom');
-
-console.log(nodeModules);
-
+//Package UI modules
+delete nodeModules['react'];
+delete nodeModules['react-dom'];
 
 module.exports = {
     entry: "./src/app.jsx",

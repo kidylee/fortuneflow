@@ -1,10 +1,3 @@
-
-console.log(window);
-console.log(window.document);
-
-console.log(document);
-
-
 var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -13,7 +6,7 @@ var ReactDOM = require('react-dom');
 
 class MyComponent extends React.Component {
   render() {
-    return <div>Hello World</div>;
+    return <div>Hello World afefasef</div>;
   }
 
   componentWillMount(){
@@ -21,4 +14,8 @@ class MyComponent extends React.Component {
   }
 }
 
-ReactDOM.render(<MyComponent />, node);
+var div= document.createElement('div');
+document.body.appendChild(div)
+
+
+ReactDOM.render(<MyComponent />, div);
