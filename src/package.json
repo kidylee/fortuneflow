@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "author": "An Li kidylee@gmail.com",
-  "main": "app://./index.html",
+  "main": "index.html",
   "window": {
     "icon": "icon.png",
     "show": true,
@@ -13,7 +13,8 @@
     "height": 600,
     "min_width": 800,
     "min_height": 400,
-    "position": "center"
+    "position": "center",
+    "toolbar": true
   },
   "dependencies": {
   },

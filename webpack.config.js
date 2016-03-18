@@ -16,9 +16,11 @@ fs.readdirSync('node_modules')
 //Package UI modules
 delete nodeModules['react'];
 delete nodeModules['react-dom'];
+delete nodeModules['react-redux'];
+delete nodeModules['redux'];
 
 module.exports = {
-    entry: "./src/app.jsx",
+    entry: "./src/index.jsx",
     target: "node-webkit",
     output: {
         path: "dist",
@@ -30,7 +32,7 @@ module.exports = {
     module: {
         loaders: [
             {
-              test: /\.jsx$/,
+              test: /\.jsx?$/,
               loader: 'babel-loader',
               include: [
                 path.resolve(__dirname, "src"),

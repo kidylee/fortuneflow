@@ -15,7 +15,7 @@
     "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.10.0",
     "mocha": "^2.4.5",
-    "nw": "^0.12.3",
+    "nw": "^0.13.0-rc3sdk",
     "q": "^1.4.1",
     "react-addons-test-utils": "^0.14.7",
     "sinon": "^1.17.3",
@@ -26,11 +26,12 @@
   },
   "scripts": {
     "start": "node ./scripts/start.js",
-    "test": "mocha",
-    "version": "nw version"
+    "test": "mocha"
   },
   "dependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1"
   }
 }
