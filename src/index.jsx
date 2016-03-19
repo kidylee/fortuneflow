@@ -1,7 +1,7 @@
-require('nw.gui').Window.get().showDevTools();
+require('nw.gui').Window.get().showDevTools()
 
-var div= document.createElement('div');
-document.body.appendChild(div)
+var container= document.createElement('div')
+document.body.appendChild(container)
 
 
 
@@ -19,6 +19,6 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  div
+  container
 )
 

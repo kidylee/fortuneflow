@@ -26,10 +26,9 @@ class AddTodo extends Component {
           this.input = node
         }} />
         <button onClick={() => {
-          // dispatch(addTodo(this.input.value))
-          // this.input.value = ''
-          // this.input.focus()
-          onClick(this.input)
+          onClick(this.input.value)
+          this.input.value = ''
+          this.input.focus()
 
         }}>
           Add Todo
@@ -48,8 +47,8 @@ const mapStateToProps = (state) => {
 
  function mapDispatchToProps(dispatch) {
     return {
-      onClick: (el) => {
-        dispatch(addTodo(el.value))
+      onClick: (text) => {
+        dispatch(addTodo(text))
       }
     }
  }
