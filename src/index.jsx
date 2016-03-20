@@ -1,9 +1,8 @@
 require('nw.gui').Window.get().showDevTools()
-
-var container= document.createElement('div')
-document.body.appendChild(container)
-
-
+require('bootstrap');
+require('bootstrap/dist/css/bootstrap.css');
+require('jQuery')
+var container= document.getElementById('container')
 
 
 import React from 'react'

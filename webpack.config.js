@@ -1,6 +1,8 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var fs = require('fs');
+const webpack = require('webpack');
+
 
 //do not pack the module which has binary file
 var nodeModules = {};
@@ -18,9 +20,20 @@ delete nodeModules['react'];
 delete nodeModules['react-dom'];
 delete nodeModules['react-redux'];
 delete nodeModules['redux'];
+delete nodeModules['bootstrap'];
+delete nodeModules['font-awesome'];
+
+
+
+
 
 module.exports = {
-    entry: "./src/index.jsx",
+  debug: true,
+    entry: [
+      'font-awesome-loader!./node_modules/font-awesome-loader/font-awesome.config.js',
+      // 'bootstrap-loader',
+      './src/index.jsx'
+    ],
     target: "node-webkit",
     output: {
         path: "dist",
@@ -38,14 +51,29 @@ module.exports = {
                 path.resolve(__dirname, "src"),
                 path.resolve(__dirname, "test")
               ],
-            }
+            },
+            { test: /\.css$/, loaders: [ 'style', 'css', 'postcss' ] },
+            { test: /\.scss$/, loaders: [ 'style', 'css', 'postcss', 'sass' ] },
+            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
+            { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' }
         ],
         include:  [
             // path.resolve(__dirname, "src")
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin(),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
+        new HtmlWebpackPlugin({
+          title: 'Fortune Flow',
+          template: 'src/index.ejs',
+          inject:'body'
+        })
 
   ],
 
