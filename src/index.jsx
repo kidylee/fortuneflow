@@ -1,7 +1,10 @@
 require('nw.gui').Window.get().showDevTools()
 require('bootstrap');
-require('bootstrap/dist/css/bootstrap.css');
-require('jQuery')
+require('admin-lte/dist/js/app.js')
+require('bootstrap/dist/css/bootstrap.css')
+require('admin-lte/dist/css/AdminLTE.css')
+require('admin-lte/dist/css/skins/skin-blue.css')
+require('admin-lte/plugins/slimScroll/jquery.slimscroll')
 var container= document.getElementById('container')
 
 
@@ -19,5 +22,5 @@ render(
     <App />
   </Provider>,
   container
-)
+  )
 
