@@ -3,7 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import MainSidebar from './MainSidebar'
-import Content from './Content'
+import MainWindow from './MainWindow'
 import ControlSidebar from './ControlSidebar'
 
 // require('bootstrap/dist/js/bootstrap.js')
@@ -18,18 +18,18 @@ class App extends Component {
     require('admin-lte/plugins/slimScroll/jquery.slimscroll')
     require('admin-lte/dist/js/app.js')
   }
-  
+
  render(){
    return (
     <div className="wrapper" >
       <Header/>
       <MainSidebar/>
-      <Content/>
+      <MainWindow/>
       <Footer/>
       <ControlSidebar/>
     </div>
   )
- } 
+ }
 }
 
 export default App

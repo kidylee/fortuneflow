@@ -22,6 +22,9 @@ delete nodeModules['react-redux'];
 delete nodeModules['redux'];
 delete nodeModules['bootstrap'];
 delete nodeModules['jquery'];
+delete nodeModules['react-grid-layout'];
+
+
 
 // delete nodeModules['font-awesome'];
 
