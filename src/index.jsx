@@ -1,10 +1,9 @@
 require('nw.gui').Window.get().showDevTools()
-require('bootstrap');
-require('admin-lte/dist/js/app.js')
+
 require('bootstrap/dist/css/bootstrap.css')
 require('admin-lte/dist/css/AdminLTE.css')
 require('admin-lte/dist/css/skins/skin-blue.css')
-require('admin-lte/plugins/slimScroll/jquery.slimscroll')
+window.jQuery = window.$ = require('jQuery')
 var container= document.getElementById('container')
 
 

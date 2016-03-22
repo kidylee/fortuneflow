@@ -21,6 +21,8 @@ delete nodeModules['react-dom'];
 delete nodeModules['react-redux'];
 delete nodeModules['redux'];
 delete nodeModules['bootstrap'];
+delete nodeModules['jquery'];
+
 // delete nodeModules['font-awesome'];
 
 
@@ -56,7 +58,6 @@ module.exports = {
             { test: /\.scss$/, loaders: [ 'style', 'css', 'postcss', 'sass' ] },
             { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
             { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
-            { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' },
             {
                 test: /\.jpg$/,
                 loader: "url-loader",
@@ -71,8 +72,9 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
+            // $: "jquery",
+//             jQuery: "jquery",
+//             "window.jQuery": "jquery"
         }),
         new HtmlWebpackPlugin({
           title: 'Fortune Flow',
