@@ -27,7 +27,7 @@ export default class Workspace extends Component{
   }
 
   generateLayout() {
-    var p = this.props;
+     var p = this.props;
     return _.map(new Array(p.items), function(item, i) {
       var y = _.result(p, 'y') || Math.ceil(Math.random() * 4) + 1;
       return {x: i * 2 % 12, y: Math.floor(i / 6) * y, w: 2, h: y, i: i.toString()};
@@ -41,12 +41,19 @@ export default class Workspace extends Component{
 
 
   render() {
-    return (
-      <ReactGridLayout layout={this.state.layout} onLayoutChange={this.onLayoutChange}
-          {...this.props}>
-        {this.generateDOM()}
-      </ReactGridLayout>
-    );
+    var layout = [
+    {x: 0, y: 0, w: 1, h: 2},
+    {x: 1, y: 0, w: 1, h: 2},
+    {x: 2, y: 0, w: 1, h: 2}
+  ];
+   return (
+      <ReactGridLayout className="layout" layout={layout}
+      cols={12} rowHeight={30}>
+      <div key={1}>1</div>
+      <div key={2}>2</div>
+      <div key={3}>3</div>
+    </ReactGridLayout>
+    )
   }
 }
 
@@ -58,9 +65,10 @@ Workspace.propTypes =  {
 
 
 Workspace.defaultProps =  {
-      className: "layout",
-      items: 20,
-      rowHeight: 30,
-      cols: 12
-    }
+  isDraggable: true,
+  isResizable: true,
+  items: 20,
+  rowHeight: 30,
+  cols: 12
+}
 

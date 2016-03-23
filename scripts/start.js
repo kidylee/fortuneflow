@@ -56,7 +56,7 @@ var runWebPack = function(){
     return deferred.promise;
 }
 
-var runWebpackDevServer = function () {	
+var runWebpackDevServer = function () {
 
 	var deferred = Q.defer();
 
@@ -75,7 +75,7 @@ var runWebpackDevServer = function () {
 
 		if(code.toString().indexOf("VALID") > 0){
 			deferred.resolve("================Starting nwjs===================");
-		
+
 		}
 
 	});
@@ -85,7 +85,7 @@ var runWebpackDevServer = function () {
 };
 
 var runApp = function () {
-    var app = childProcess.spawn(nw.findpath(), ['./dist'], {
+    var app = childProcess.spawn(nw.findpath(), ['./dist' ,'--load-extension=./extensions/react-devtools'], {
         stdio: 'inherit'
     });
 
@@ -101,4 +101,4 @@ runCopy()
 .then(runWebPack)
 .then(runWebpackDevServer)
 .then(runApp);
-// 
+//

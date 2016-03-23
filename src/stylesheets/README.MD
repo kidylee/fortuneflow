@@ -1,0 +1,1 @@
+http://sass-guidelin.es/#the-7-1-pattern

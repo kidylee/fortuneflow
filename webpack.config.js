@@ -23,6 +23,8 @@ delete nodeModules['redux'];
 delete nodeModules['bootstrap'];
 delete nodeModules['jquery'];
 delete nodeModules['react-grid-layout'];
+// delete nodeModules['compass-mixins'];
+
 
 
 
@@ -66,9 +68,6 @@ module.exports = {
                 loader: "url-loader",
                 query: { mimetype: "image/jpeg" }
             }
-        ],
-        include:  [
-            // path.resolve(__dirname, "src")
         ]
     },
     plugins: [
