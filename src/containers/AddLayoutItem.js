@@ -6,11 +6,11 @@ let AddLayoutItem = ({ dispatch }) => {
 
 	return (
 		<li className="active">
-			<a href="#" onClick={ 
+			<a href="#" onClick={
 				e => {
 					e.preventDefault()
 					dispatch(addLayoutItem('test'))
-				} 
+				}
 
 			}>
 			<i className="fa fa-laptop" />
@@ -23,4 +23,4 @@ let AddLayoutItem = ({ dispatch }) => {
 AddLayoutItem = connect()(AddLayoutItem)
 
 export default AddLayoutItem
-        
+

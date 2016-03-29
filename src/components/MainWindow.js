@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Workspace from './Workspace'
-
+import AutoLayout from '../containers/AutoLayout'
 
 class MainWindow extends Component {
 
@@ -43,7 +43,7 @@ class MainWindow extends Component {
              </div>
         </div>
 
-        <Workspace onLayoutChange={this.onLayoutChange.bind(this)} className="content"/>
+        <AutoLayout className="content"/>
 
       </div>
     )
