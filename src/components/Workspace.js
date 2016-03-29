@@ -13,7 +13,6 @@ export default class Workspace extends Component{
   constructor(props){
      super(props);
      this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-     this.state = {layout: this.generateLayout()}
 
   }
 
@@ -28,14 +27,16 @@ export default class Workspace extends Component{
 
   generateLayout() {
      var p = this.props;
-    return _.map(new Array(p.items), function(item, i) {
+    return _.map(new Array( p.items), function(item, i) {
       var y = _.result(p, 'y') || Math.ceil(Math.random() * 4) + 1;
       return {x: i * 2 % 12, y: Math.floor(i / 6) * y, w: 2, h: y, i: i.toString()};
     });
   }
 
   onLayoutChange(layout){
-      this.props.onLayoutChange(layout);
+         this.setState({layout: this.generateLayout()})
+
+      this.props.onLayoutChange(  );
 
   }
 
@@ -49,9 +50,7 @@ export default class Workspace extends Component{
    return (
       <ReactGridLayout className="layout" layout={layout}
       cols={12} rowHeight={30}>
-      <div key={1}>1</div>
-      <div key={2}>2</div>
-      <div key={3}>3</div>
+      { this.generateDOM() }
     </ReactGridLayout>
     )
   }

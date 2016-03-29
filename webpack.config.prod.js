@@ -25,9 +25,15 @@ delete nodeModules['jquery'];
 delete nodeModules['react-grid-layout'];
 delete nodeModules['react-draggable'];
 delete nodeModules['react-resizable'];
-delete nodeModules['redux-devtools'];
-delete nodeModules['redux-devtools-dock-monitor'];
-delete nodeModules['redux-devtools-log-monitor'];
+
+
+// delete nodeModules['compass-mixins'];
+
+
+
+
+// delete nodeModules['font-awesome'];
+
 
 
 
@@ -69,13 +75,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        new webpack.ProvidePlugin({
-            // $: "jquery",
-//             jQuery: "jquery",
-//             "window.jQuery": "jquery"
-        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        },
         new HtmlWebpackPlugin({
           title: 'Fortune Flow',
           template: 'src/index.ejs',

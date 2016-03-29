@@ -50,6 +50,19 @@ class MainWindow extends Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    layout: state.layout
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onClick: () => {
+      dispatch(setVisibilityFilter(ownProps.filter))
+    }
+  }
+}
 
 
 export default MainWindow

@@ -20,3 +20,10 @@ export const toggleTodo = (id) => {
     id
   }
 }
+
+export const addChartView = (channel) => {
+  return {
+    type: 'ADD_LAYOUT_ITEM',
+    channel
+  }
+}
